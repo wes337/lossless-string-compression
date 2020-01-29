@@ -1,0 +1,21 @@
+{
+  "name": "aito-lossless-string-compression",
+  "version": "1.0.0",
+  "description": "Compress sorted lists of words using delta encoding.",
+  "main": "index.js",
+  "scripts": {
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  },
+  "author": "wes337",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}

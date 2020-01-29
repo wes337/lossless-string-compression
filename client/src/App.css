@@ -1,0 +1,32 @@
+.compress {
+  margin: 2rem;
+}
+
+.compress__header {
+  text-align: center;
+}
+
+.compress__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  margin: auto;
+}
+
+.compress__results {
+  max-height: 75vh;
+  overflow: scroll;
+}
+
+.compress_file, .decompress_file {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+textarea {
+  color: #a1c9b7;
+  background-color: #004548;
+  border: none;
+}
