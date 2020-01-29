@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import './App.css'
 
 function App() {
+  const resultsRef = useRef()
   const [loading, setLoading] = useState(false)
   const [file, setFile] = useState()
   const [compressText, setCompressText] = useState('')
   const [deCompressText, setDeCompressText] = useState('')
-  const [resultsArray, setresultsArray] = useState()
+  const [resultsArray, setresultsArray] = useState([])
   const [error, setError] = useState()
 
   const onClickCompress = async () => {
@@ -20,7 +21,8 @@ function App() {
       xhr.addEventListener("readystatechange", function () {
         if (this.readyState === XMLHttpRequest.DONE) {
           if (this.status === 200) {
-            setresultsArray(this.response)
+            const response = JSON.parse(this.response)
+            setresultsArray(response)
             setLoading(false)
           } else {
             setError(`${this.status}: ${this.responseText}`)
@@ -42,7 +44,8 @@ function App() {
     xhr.addEventListener("readystatechange", function () {
       if (this.readyState === XMLHttpRequest.DONE) {
         if (this.status === 200) {
-          setresultsArray(this.response)
+          const response = JSON.parse(this.response)
+          setresultsArray(response)
           setLoading(false)
         } else {
           setError(`${this.status}: ${this.responseText}`)
@@ -50,27 +53,32 @@ function App() {
         }
       }
     })
-    xhr.send(JSON.Stringify(data))
+    xhr.send(data)
 }
+
+  const copyResults = () => {
+    resultsRef.current.select()
+    document.execCommand('copy')
+  }
 
   return (
     <div className="compress">
       <div className="compress__header">
         <h1>Lossless String Compression</h1>
-        <p>Upload a text file or use the text area. <em>Words must be seperated by new lines!</em></p>
+        <p className="compress__descr">Upload a text file or use the text area.<br /><em>Words must be seperated by new lines!</em></p>
       </div>
       <div className="compress__grid">
         <div className="compress__actions">
           <div className="compress_file">
             <h2>Compress Words</h2>
             <input type="file" className="file__input" onChange={e => setFile(e.target.files[0])} />
-            <textarea rows="4" cols="50" value={compressText} onChange={e => setCompressText(e.target.value)} />
+            <textarea rows="10" cols="50" value={compressText} onChange={e => setCompressText(e.target.value)} />
             <button onClick={onClickCompress}>Compress</button>
           </div>
           <div className="decompress_file">
             <h2>Decompress Words</h2>
             <input type="file" className="file__input" onChange={e => setFile(e.target.files[0])} />
-            <textarea rows="4" cols="50" value={deCompressText} onChange={e => setDeCompressText(e.target.value)} />
+            <textarea rows="10" cols="50" value={deCompressText} onChange={e => setDeCompressText(e.target.value)} />
             <button onClick={onClickDeCompress}>Decompress</button>
           </div>
         </div>
@@ -78,7 +86,14 @@ function App() {
           <h2>Results</h2>
           {loading
             ? <div className="results__loading">Loading...</div>
-            : <div className="results__array">{resultsArray}</div>
+            : <>
+                <div className="results__copy" onClick={copyResults}>
+                  Copy to clipboard
+                </div>
+                <textarea readonly className="results__array" rows="20" cols="100" ref={resultsRef}>
+                  {resultsArray.join('\r\n')}
+                </textarea>
+              </>
           }
           <div className="errors">{error}</div>
         </div>

@@ -6,16 +6,16 @@
   text-align: center;
 }
 
+.compress__header h1 {
+  font-size: 2rem;
+  color: #ffffff;
+}
+
 .compress__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: center;
   margin: auto;
-}
-
-.compress__results {
-  max-height: 75vh;
-  overflow: scroll;
 }
 
 .compress_file, .decompress_file {
@@ -25,8 +25,34 @@
   flex-direction: column;
 }
 
+.compress__descr {
+  font-weight: 300;
+}
+
+.compress_file h2 {
+  color: #00b06a;
+}
+
+.decompress_file h2 {
+  color: #ffa9d3;
+}
+
+.results__copy {
+  color: #ffeff0;
+  cursor: pointer;
+  margin: 5px auto;
+}
+
 textarea {
   color: #a1c9b7;
   background-color: #004548;
   border: none;
+}
+
+button {
+  background-color: #00a9b0;
+  border: none;
+  padding: 15px 30px;
+  color: #d6f2f5;
+  margin: 5px;
 }
