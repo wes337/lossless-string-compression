@@ -18,7 +18,6 @@ app.post('/compress', async (req, res) => {
         const response = algorithm.compress(responseArray)
         res.status(200).send(response)
     } catch (error) {
-        console.log(error)
         res.status(400).send(error)
     }
 })
@@ -33,10 +32,9 @@ app.post('/decompress', async (req, res) => {
         const response = algorithm.deCompress(responseArray)
         res.status(200).send(response)
     } catch (error) {
-        console.log(error)
         res.status(400).send(error)
     }
 })
 
 app.listen(port)
-console.log('RESTful API server started on: ' + port)
+console.log('Server started on: ' + port)
