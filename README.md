@@ -2,6 +2,7 @@
 
 Compress and decompress sorted lists of text using delta encoding. *The entries must be separated by newlines.*
 
+## Usage and Installation
 Clone or download this repo, then install using your package manager.
 *You also have to install dependencies from the client directory*
 ```json5
