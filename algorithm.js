@@ -41,8 +41,6 @@ function deCompress(array) {
             deCompressedWord = `${prefix}${suffix}`
         }
 
-        console.log(deCompressedWord)
-
         deCompressedArray.push(deCompressedWord)
         previous = deCompressedWord
     }
