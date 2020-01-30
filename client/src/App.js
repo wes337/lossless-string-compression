@@ -67,36 +67,32 @@ function App() {
         <h1>Lossless String Compression</h1>
         <p className="compress__descr">Upload a text file or use the text area.<br /><em>Words must be seperated by new lines!</em></p>
       </div>
-      <div className="compress__grid">
-        <div className="compress__actions">
-          <div className="compress_file">
-            <h2>Compress Words</h2>
-            <input type="file" className="file__input" onChange={e => setFile(e.target.files[0])} />
-            <textarea rows="5" cols="50" value={compressText} onChange={e => setCompressText(e.target.value)} />
-            <button onClick={onClickCompress}>Compress</button>
-          </div>
-          <div className="decompress_file">
-            <h2>Decompress Words</h2>
-            <input type="file" className="file__input" onChange={e => setFile(e.target.files[0])} />
-            <textarea rows="5" cols="50" value={deCompressText} onChange={e => setDeCompressText(e.target.value)} />
-            <button onClick={onClickDeCompress}>Decompress</button>
-          </div>
-        </div>
-        <div className="compress__results">
-          <h2>Results</h2>
-          {loading
-            ? <div className="results__loading">Loading...</div>
-            : <>
-                <div className="results__copy" onClick={copyResults}>
-                  Copy to clipboard
-                </div>
-                <textarea readOnly className="results__array" rows="10" cols="100" ref={resultsRef}>
-                  {resultsArray.join('\r\n')}
-                </textarea>
-              </>
-          }
-          <div className="errors">{error}</div>
-        </div>
+      <div className="compress_file">
+        <h2>Compress Words</h2>
+        <input type="file" className="file__input" onChange={e => setFile(e.target.files[0])} />
+        <textarea rows="5" cols="50" value={compressText} onChange={e => setCompressText(e.target.value)} />
+        <button onClick={onClickCompress}>Compress</button>
+      </div>
+      <div className="decompress_file">
+        <h2>Decompress Words</h2>
+        <input type="file" className="file__input" onChange={e => setFile(e.target.files[0])} />
+        <textarea rows="5" cols="50" value={deCompressText} onChange={e => setDeCompressText(e.target.value)} />
+        <button onClick={onClickDeCompress}>Decompress</button>
+      </div>
+      <div className="compress__results">
+        <h2>Results</h2>
+        {loading
+          ? <div className="results__loading">Loading...</div>
+          : <>
+              <div className="results__copy" onClick={copyResults}>
+                Copy to clipboard
+              </div>
+              <textarea readOnly className="results__array" rows="10" cols="100" ref={resultsRef}>
+                {resultsArray.join('\r\n')}
+              </textarea>
+            </>
+        }
+        <div className="errors">{error}</div>
       </div>
     </div>
   )

@@ -1,8 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Space+Mono:700&display=swap');
 
-body, html {
+* {
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
+}
+
+body, html {
+  margin: 60px;
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -15,4 +21,10 @@ body, html {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@media only screen and (max-width: 500px) {
+  body, html {
+    margin: 5px;
+  }
 }
