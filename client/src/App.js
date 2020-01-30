@@ -12,6 +12,7 @@ function App() {
 
   const onClickCompress = async () => {
     setLoading(true)
+    setError('')
       const data = compressText || file
       const xhr = new XMLHttpRequest()
       xhr.open("POST", `http://${window.location.host}/compress`)
@@ -35,6 +36,7 @@ function App() {
 
   const onClickDeCompress = async () => {
     setLoading(true)
+    setError('')
     const data = deCompressText || file
     const xhr = new XMLHttpRequest()
     xhr.open("POST", `http://${window.location.host}/decompress`)

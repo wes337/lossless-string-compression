@@ -37,6 +37,15 @@
   border-bottom: 1px solid rgb(63, 137, 110);
 }
 
+.results__loading {
+  color: #ffe9cb;
+}
+
+.errors {
+  font-weight: 700;
+  color: #fd4f39;
+}
+
 .results__copy {
   color: #ffeff0;
   cursor: pointer;
