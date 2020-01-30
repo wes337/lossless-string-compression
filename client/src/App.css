@@ -16,27 +16,23 @@
 .compress__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
   justify-content: center;
   margin: auto;
 }
 
 .compress_file, .decompress_file {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
 }
 
 .compress__descr {
-  font-weight: 300;
+  font-size: 20px;
+  font-weight: 400;
 }
 
-.compress_file h2 {
-  color: #00b06a;
-}
-
-.decompress_file h2 {
-  color: #ffa9d3;
+.compress_file h2, .decompress_file h2, .compress__results h2 {
+  border-bottom: 1px solid rgb(63, 137, 110);
 }
 
 .results__copy {
@@ -58,8 +54,9 @@ button {
   border-radius: 2rem;
   line-height: 1.5;
   color: rgb(153, 100, 103);
-  margin: 5px;
+  margin: 10px auto;
   padding: 0.6rem 1rem;
   font-weight: 700;
   font-size: 16px;
+  width: 50%;
 }
