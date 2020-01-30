@@ -90,7 +90,7 @@ function App() {
                 <div className="results__copy" onClick={copyResults}>
                   Copy to clipboard
                 </div>
-                <textarea readonly className="results__array" rows="10" cols="100" ref={resultsRef}>
+                <textarea readOnly className="results__array" rows="10" cols="100" ref={resultsRef}>
                   {resultsArray.join('\r\n')}
                 </textarea>
               </>

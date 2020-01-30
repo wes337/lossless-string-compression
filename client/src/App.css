@@ -46,6 +46,7 @@ textarea {
   background-color: -internal-light-dark-color(white, black);
   font-size: 16px;
   border: none;
+  border-radius: 0.2rem;
 }
 
 button {
