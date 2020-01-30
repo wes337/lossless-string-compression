@@ -7,6 +7,8 @@
 }
 
 .compress__header h1 {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
   font-size: 2rem;
   color: #ffffff;
 }
@@ -44,15 +46,20 @@
 }
 
 textarea {
-  color: #a1c9b7;
-  background-color: #004548;
+  color: -internal-light-dark-color(white, black);
+  background-color: -internal-light-dark-color(white, black);
+  font-size: 16px;
   border: none;
 }
 
 button {
-  background-color: #00a9b0;
-  border: none;
-  padding: 15px 30px;
-  color: #d6f2f5;
+  background-color: rgb(255, 169, 211);
+  border: 2px solid rgb(255, 169, 211);
+  border-radius: 2rem;
+  line-height: 1.5;
+  color: rgb(153, 100, 103);
   margin: 5px;
+  padding: 0.6rem 1rem;
+  font-weight: 700;
+  font-size: 16px;
 }

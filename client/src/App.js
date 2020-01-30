@@ -72,13 +72,13 @@ function App() {
           <div className="compress_file">
             <h2>Compress Words</h2>
             <input type="file" className="file__input" onChange={e => setFile(e.target.files[0])} />
-            <textarea rows="10" cols="50" value={compressText} onChange={e => setCompressText(e.target.value)} />
+            <textarea rows="5" cols="50" value={compressText} onChange={e => setCompressText(e.target.value)} />
             <button onClick={onClickCompress}>Compress</button>
           </div>
           <div className="decompress_file">
             <h2>Decompress Words</h2>
             <input type="file" className="file__input" onChange={e => setFile(e.target.files[0])} />
-            <textarea rows="10" cols="50" value={deCompressText} onChange={e => setDeCompressText(e.target.value)} />
+            <textarea rows="5" cols="50" value={deCompressText} onChange={e => setDeCompressText(e.target.value)} />
             <button onClick={onClickDeCompress}>Decompress</button>
           </div>
         </div>
@@ -90,7 +90,7 @@ function App() {
                 <div className="results__copy" onClick={copyResults}>
                   Copy to clipboard
                 </div>
-                <textarea readonly className="results__array" rows="20" cols="100" ref={resultsRef}>
+                <textarea readonly className="results__array" rows="10" cols="100" ref={resultsRef}>
                   {resultsArray.join('\r\n')}
                 </textarea>
               </>
